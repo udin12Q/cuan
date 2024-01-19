@@ -59,11 +59,11 @@ class WalletScreen extends StatelessWidget {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: 5,
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Text('Tarik Tunai '),
-                    subtitle: Text('transfer ke rekening'),
+                    subtitle: Text('12/12/2021'),
                     trailing: Text('-\20.000'),
                   );
                 },
