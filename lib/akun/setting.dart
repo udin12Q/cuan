@@ -40,7 +40,7 @@ class _WalletScreenState extends State<WalletScreen> {
             SizedBox(height: 16.0),
             SwitchListTile(
               title: Text('Aktifkan Notifikasi'),
-              subtitle: Text('Terima pemberitahuan tentang transaksi Anda'),
+              subtitle: Text('Terima pemberitahuantransaksi Anda'),
               value: notificationsEnabled,
               onChanged: (value) {
                 setState(() {
