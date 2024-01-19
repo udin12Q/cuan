@@ -11,12 +11,28 @@ class TopUp extends StatefulWidget {
 @override
 class _TopUpState extends State<TopUp> {
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Top Up'),
-        backgroundColor: Colors.redAccent,
-        foregroundColor: Colors.white,
-        elevation: 0,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.pink,
+            foregroundColor: Colors.white,
+            elevation: 0,
+            bottom: const TabBar(
+              tabs: [
+                Tab(text: 'Isi Saldo'),
+              ],
+            ),
+            title: const Text('Top Up'),
+          ),
+          body: TabBarView(
+            children: [
+              Instant(),
+            ],
+          ),
+        ),
       ),
     );
   }

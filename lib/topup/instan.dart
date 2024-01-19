@@ -1,3 +1,4 @@
+import 'package:aaa/payment/Metode_bayar.dart';
 import 'package:flutter/material.dart';
 
 class Instant extends StatefulWidget {
@@ -20,6 +21,7 @@ class _InstantState extends State<Instant> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -42,7 +44,7 @@ class _InstantState extends State<Instant> {
                         height: 100,
                         decoration: BoxDecoration(
                           color:
-                              money1Selected ? Colors.blue : Colors.redAccent,
+                              money1Selected ? Colors.blue : Colors.pinkAccent,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Column(
@@ -73,7 +75,7 @@ class _InstantState extends State<Instant> {
                         height: 100,
                         decoration: BoxDecoration(
                           color:
-                              money2selected ? Colors.blue : Colors.redAccent,
+                              money2selected ? Colors.blue : Colors.pinkAccent,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Column(
@@ -104,7 +106,7 @@ class _InstantState extends State<Instant> {
                         height: 100,
                         decoration: BoxDecoration(
                           color:
-                              money3selected ? Colors.blue : Colors.redAccent,
+                              money3selected ? Colors.blue : Colors.pinkAccent,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Column(
@@ -143,7 +145,7 @@ class _InstantState extends State<Instant> {
                         height: 100,
                         decoration: BoxDecoration(
                           color:
-                              money4selected ? Colors.blue : Colors.redAccent,
+                              money4selected ? Colors.blue : Colors.pinkAccent,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Column(
@@ -174,7 +176,7 @@ class _InstantState extends State<Instant> {
                         height: 100,
                         decoration: BoxDecoration(
                           color:
-                              money5selected ? Colors.blue : Colors.redAccent,
+                              money5selected ? Colors.blue : Colors.pinkAccent,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Column(
@@ -205,7 +207,7 @@ class _InstantState extends State<Instant> {
                         height: 100,
                         decoration: BoxDecoration(
                           color:
-                              money6selected ? Colors.blue : Colors.redAccent,
+                              money6selected ? Colors.blue : Colors.pinkAccent,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Column(
@@ -245,7 +247,13 @@ class _InstantState extends State<Instant> {
                 width: double.infinity,
                 height: 80,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MetodePayment()),
+                      );
+                    },
                     child: Text('Konfirmasi & Top Up ' + selectedLabel)),
               )
             ],
