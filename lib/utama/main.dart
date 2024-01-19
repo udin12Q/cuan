@@ -1,5 +1,8 @@
 import 'package:aaa/History/historyjalan.dart';
 import 'package:aaa/Home/HomePage.dart';
+import 'package:aaa/akun/akun.dart';
+import 'package:aaa/akun/isi.dart';
+import 'package:aaa/akun/setting.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -41,9 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List _pages = [
     HomePage(),
     History(judul: ""),
-    Center(
-      child: Text("akun"),
-    ),
+    Profile(),
   ];
 
   @override

@@ -1,5 +1,5 @@
 import 'package:aaa/History/historyjalan.dart';
-import 'package:aaa/metodepembayaran/Metode_bayar.dart';
+import 'package:aaa/payment/Metode_bayar.dart';
 import 'package:aaa/topup/instan.dart';
 import 'package:aaa/topup/topip.dart';
 import 'package:aaa/transfer/kirim.dart';
