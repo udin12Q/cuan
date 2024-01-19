@@ -45,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     HomePage(),
     History(judul: ""),
     Profile(),
+    setting(),
   ];
 
   @override
@@ -67,6 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 icon: Icon(Icons.history), label: "History"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.account_circle_outlined), label: "Akun"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: "setting"),
           ],
         ),
         body: _pages[_selectedTab]);

@@ -25,9 +25,6 @@ class _WalletScreenState extends State<WalletScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Cuanku'),
-      ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -62,10 +59,7 @@ class _WalletScreenState extends State<WalletScreen> {
             ),
             Divider(),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomePage()));
-              },
+              onPressed: () {},
               child: Text('Keluar'),
             ),
           ],
