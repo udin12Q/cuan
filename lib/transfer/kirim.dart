@@ -4,14 +4,14 @@ class TransferHistory {
   final String bank;
   final String accountNumber;
   final double amount;
-  final Color historyColor; // Added for dynamic color
-  final DateTime transferDateTime; // Added for transfer date and time
+  final Color historyColor;
+  final DateTime transferDateTime;
 
   TransferHistory(this.bank, this.accountNumber, this.amount, this.historyColor,
       this.transferDateTime);
 }
 
-class MyApp extends StatelessWidget {
+class kirim extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,11 +31,10 @@ class TransferPage extends StatefulWidget {
 class _TransferPageState extends State<TransferPage> {
   TextEditingController amountController = TextEditingController();
   TextEditingController accountNumberController = TextEditingController();
-  TextEditingController passwordController =
-      TextEditingController(); // Added for password
-  String selectedBank = 'BRI'; // Default bank selection
-  List<TransferHistory> transferHistory = []; // List to store transfer history
-  final String correctPassword = '12131415'; // Correct password
+  TextEditingController passwordController = TextEditingController();
+  String selectedBank = 'BRI';
+  List<TransferHistory> transferHistory = [];
+  final String correctPassword = '12131415';
 
   @override
   Widget build(BuildContext context) {
@@ -93,11 +92,9 @@ class _TransferPageState extends State<TransferPage> {
                     SizedBox(height: 16.0),
                     ElevatedButton.icon(
                       onPressed: () {
-                        // Check password before proceeding with the transfer
                         if (passwordController.text == correctPassword) {
                           showBankSelectionDialog();
                         } else {
-                          // Show error message or take appropriate action for incorrect password
                           showDialog(
                             context: context,
                             builder: (BuildContext context) {
@@ -107,8 +104,7 @@ class _TransferPageState extends State<TransferPage> {
                                 actions: [
                                   TextButton(
                                     onPressed: () {
-                                      Navigator.pop(
-                                          context); // Close the dialog
+                                      Navigator.pop(context);
                                     },
                                     child: Text('OK'),
                                   ),
@@ -168,7 +164,6 @@ class _TransferPageState extends State<TransferPage> {
             SizedBox(height: 16.0),
             ElevatedButton.icon(
               onPressed: () {
-                // Add logic to handle sending to contact
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
@@ -179,8 +174,8 @@ class _TransferPageState extends State<TransferPage> {
                       actions: [
                         TextButton(
                           onPressed: () {
-                            Navigator.pop(context); // Close the dialog
-                            showTransferReceipt(); // Show transfer receipt after sending to contact
+                            Navigator.pop(context);
+                            showTransferReceipt();
                           },
                           child: Text('OK'),
                         ),
@@ -280,7 +275,7 @@ class _TransferPageState extends State<TransferPage> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        Color historyColor = generateRandomColor(); // Generate a dynamic color
+        Color historyColor = generateRandomColor();
 
         return AlertDialog(
           title: Text('Masukkan Nomor Rekening',
@@ -349,7 +344,7 @@ class _TransferPageState extends State<TransferPage> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.pop(context); // Close the dialog
+                Navigator.pop(context);
               },
               child: Text('OK'),
             ),
@@ -360,8 +355,6 @@ class _TransferPageState extends State<TransferPage> {
   }
 
   Color generateRandomColor() {
-    // You can implement a method to generate a dynamic color based on your criteria
-    // For simplicity, let's use a random color for demonstration purposes
     return Color.fromRGBO(
       (DateTime.now().millisecond * 17) % 256,
       (DateTime.now().millisecond * 13) % 256,

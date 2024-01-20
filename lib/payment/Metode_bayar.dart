@@ -14,6 +14,9 @@ class _MetodePaymentState extends State<MetodePayment> {
   bool briselected = false;
   bool danaSelected = false;
   bool gopaySelected = false;
+  bool ovoSelected = false;
+  bool kalselselected = false;
+  bool btnSelected = false;
   String selectedLabel = "";
 
   @override
@@ -221,6 +224,104 @@ class _MetodePaymentState extends State<MetodePayment> {
                         ),
                         Text(
                           'Gopay',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      ovoSelected = ovoSelected ? false : true;
+                      selectedLabel = ovoSelected ? " ovo" : "";
+                    });
+                  },
+                  child: Container(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      color: ovoSelected ? Colors.blue : Colors.redAccent,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.wallet,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                        Text(
+                          'OVO',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      kalselselected = kalselselected ? false : true;
+                      selectedLabel = kalselselected ? " bank kalsel" : "";
+                    });
+                  },
+                  child: Container(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      color: kalselselected ? Colors.blue : Colors.redAccent,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.payment,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                        Text(
+                          'AKSEL',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      btnSelected = btnSelected ? false : true;
+                      selectedLabel = btnSelected ? " btn" : "";
+                    });
+                  },
+                  child: Container(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      color: btnSelected ? Colors.blue : Colors.redAccent,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.payment,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                        Text(
+                          'BTN',
                           style: TextStyle(color: Colors.white),
                         ),
                       ],

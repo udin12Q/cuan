@@ -1,5 +1,6 @@
 import 'package:aaa/History/historyjalan.dart';
 import 'package:aaa/payment/Metode_bayar.dart';
+import 'package:aaa/payment/Qr.dart';
 import 'package:aaa/topup/instan.dart';
 import 'package:aaa/topup/topip.dart';
 import 'package:aaa/transfer/kirim.dart';
@@ -22,9 +23,13 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         children: [
           Container(
+            transform: Matrix4.translationValues(0, -20, 0),
+            constraints: BoxConstraints.expand(height: 50),
+            color: Colors.redAccent,
+            alignment: Alignment.center,
             margin: const EdgeInsets.only(top: 20),
-            child: const Text('Saldo = 10.000.000',
-                style: TextStyle(fontSize: 20, color: Colors.black)),
+            child: const Text('Rp 10.000.000',
+                style: TextStyle(fontSize: 30, color: Colors.white)),
           ),
           Container(
             margin: const EdgeInsets.only(top: 20),
@@ -32,7 +37,10 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Barcode()));
+                  },
                   child: Container(
                     width: 60,
                     height: 60,
@@ -246,6 +254,110 @@ class _HomePageState extends State<HomePage> {
                         ),
                         const Text(
                           'Lainnya',
+                          style: TextStyle(color: Colors.white),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 30),
+            width: 300,
+            height: 150,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              gradient: LinearGradient(
+                colors: [Colors.blue, Colors.green],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Promo Spesial!',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Nikmati cashback 50% untuk transaksi pertama Anda!',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                ElevatedButton(
+                  onPressed: () {
+                    // Aksi ketika tombol Promo ditekan
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.blue,
+                  ),
+                  child: Text('KLAIM SEKARANG'),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: 150,
+                    height: 150,
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          Icons.videogame_asset_rounded,
+                          color: Colors.white,
+                          size: 50,
+                        ),
+                        const Text(
+                          'Games',
+                          style: TextStyle(color: Colors.white),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: 150,
+                    height: 150,
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          Icons.videocam_rounded,
+                          color: Colors.white,
+                          size: 50,
+                        ),
+                        const Text(
+                          'Film',
                           style: TextStyle(color: Colors.white),
                         )
                       ],
